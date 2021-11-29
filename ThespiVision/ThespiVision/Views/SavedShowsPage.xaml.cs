@@ -28,7 +28,6 @@ namespace ThespiVision.Views
         private async void testAdd(object sender, EventArgs args)
         {
            _savedShows.Add(new Show("Test Show", "Shakespear", "Right here", "It's a test show"));
-            Console.WriteLine(_savedShows.Count);
         }
     }
 }
