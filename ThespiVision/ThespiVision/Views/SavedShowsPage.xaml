@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThespiVision.Views.SavedShowsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="EmptySaveListText" Text="Save Some Shows!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="SavedShowListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding SavedShows}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
