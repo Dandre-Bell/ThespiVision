@@ -6,7 +6,7 @@ namespace ThespiVision.Models
 {
     public class Show
     {
-        private string title { get; set; }
+        public string title { get; set; }
         private string company { get; set; }
         private string location { get; set; }
         private DateTime showDate { get; set; }
