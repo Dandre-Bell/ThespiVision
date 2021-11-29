@@ -9,7 +9,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding title}"/>
+                            <StackLayout>
+                                <Label Text="{Binding title}"/>
+                                <Label Text="{Binding showDate}"/>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
