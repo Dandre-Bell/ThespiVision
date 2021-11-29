@@ -9,11 +9,12 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding SavedShows}"/>
+                            <Label Text="{Binding title}"/>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Add Test" Clicked="testAdd"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
