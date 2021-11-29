@@ -9,9 +9,12 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding title}"/>
-                                <Label Text="{Binding showDate}"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <Label Text="{Binding title}"/>
+                                    <Label Text="{Binding showDate}"/>
+                                </StackLayout>
+                                <ImageButton Source="ThespiVision\ThespiVision\Assets\TrashIcon.png" BackgroundColor="Red" WidthRequest="50" Margin="210,0,0,0"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
