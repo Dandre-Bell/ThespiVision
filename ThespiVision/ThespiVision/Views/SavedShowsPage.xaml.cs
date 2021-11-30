@@ -13,21 +13,29 @@ namespace ThespiVision.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SavedShowsPage : ContentPage
     {
+
+
         private readonly ObservableCollection<Show> _savedShows = new ObservableCollection<Show> { };
 
         public SavedShowsPage()
         {
             InitializeComponent();
-
             EmptySaveListText.IsVisible = !(_savedShows.Count > 0);
-
+            SavedShowListView.IsVisible = _savedShows.Count > 0;
+            _savedShows.CollectionChanged += UpdateVisibility;
             SavedShowListView.ItemsSource = _savedShows;
-            
         }
 
         private async void testAdd(object sender, EventArgs args)
         {
            _savedShows.Add(new Show("Test Show", "Shakespear", "Right here", "It's a test show"));
+        }
+
+        private void UpdateVisibility(Object sender, EventArgs args)
+        {
+            EmptySaveListText.IsVisible = !(_savedShows.Count > 0);
+            SavedShowListView.IsVisible = _savedShows.Count > 0;
+            Console.WriteLine("Called!");
         }
     }
 }
