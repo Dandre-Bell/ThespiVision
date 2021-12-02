@@ -34,7 +34,8 @@ namespace ThespiVision.Views
 
         private async void openDetailPage(object sender, EventArgs args)
         {
-           await Navigation.PushAsync(new SavedShowDetailPage());
+            var chosenShow = SavedShowListView.SelectedItem as Show;
+           await Navigation.PushAsync(new SavedShowDetailPage(chosenShow.listingID));
         }
 
         private void UpdateVisibility(Object sender, EventArgs args)

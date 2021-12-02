@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ThespiVision.Views.SavedShowDetailPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand">
-            <Label Text="Title"/>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label x:Name="Title" />
             <Label Text="Company"/>
             <Label Text="Date and time"/>
             <Label Text="Description"/>

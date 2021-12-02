@@ -12,10 +12,13 @@ namespace ThespiVision.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SavedShowDetailPage : ContentPage
     {
-        
-        public SavedShowDetailPage()
+        Guid showID;
+        public SavedShowDetailPage(Guid ID)
         {
             InitializeComponent();
+            showID = ID;
+            Console.WriteLine(showID);
+
         }
     }
 }
