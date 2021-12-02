@@ -24,6 +24,7 @@ namespace ThespiVision.Views
             SavedShowListView.IsVisible = _savedShows.Count > 0;
             _savedShows.CollectionChanged += UpdateVisibility;
             SavedShowListView.ItemsSource = _savedShows;
+            SavedShowListView.ItemTapped += openDetailPage;
         }
 
         private async void testAdd(object sender, EventArgs args)
@@ -31,11 +32,15 @@ namespace ThespiVision.Views
            _savedShows.Add(new Show("Test Show", "Shakespear", "Right here", "It's a test show"));
         }
 
+        private async void openDetailPage(object sender, EventArgs args)
+        {
+           await Navigation.PushAsync(new SavedShowDetailPage());
+        }
+
         private void UpdateVisibility(Object sender, EventArgs args)
         {
             EmptySaveListText.IsVisible = !(_savedShows.Count > 0);
             SavedShowListView.IsVisible = _savedShows.Count > 0;
-            Console.WriteLine("Called!");
         }
     }
 }

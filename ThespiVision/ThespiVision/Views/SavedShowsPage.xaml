@@ -6,7 +6,7 @@
         <StackLayout>
             <Label x:Name="EmptySaveListText" Text="View your saved shows here!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
             <ListView x:Name="SavedShowListView">
-                <ListView.ItemTemplate>
+                <ListView.ItemTemplate >
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
