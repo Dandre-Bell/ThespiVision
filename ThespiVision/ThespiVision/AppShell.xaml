@@ -15,14 +15,17 @@
     <FlyoutItem Title="Home">
         <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Saved Shows">
+    <FlyoutItem x:Name="SavedShowsTab" Title="Saved Shows">
         <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:SavedShowsPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Post Show">
+    <FlyoutItem x:Name="PostShowTab" Title="Post Show">
         <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:PostShowPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Log In">
+    <FlyoutItem x:Name="LoginTab" Title="Log In">
         <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:LogInPage}"/>
+    </FlyoutItem>
+    <FlyoutItem x:Name="LogOutButton" Title="Log Out" >
+        
     </FlyoutItem>
 
 </Shell>

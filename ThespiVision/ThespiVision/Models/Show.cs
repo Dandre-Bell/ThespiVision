@@ -11,6 +11,7 @@ namespace ThespiVision.Models
         public string location { get; set; }
         public DateTime showDate { get; set; }
         public string description { get; set; }
+        public Guid listingID { get; set; }
 
         public Show(string title, string company, string location, string description)
         {
@@ -19,6 +20,7 @@ namespace ThespiVision.Models
             this.location = location;
             // this.showDate = showDate;
             this.description = description;
+            listingID = Guid.NewGuid();
         }
     }
 }

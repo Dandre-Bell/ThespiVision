@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using ThespiVision.Views;
+using ThespiVision.Controllers;
 
 namespace ThespiVision
 {
@@ -18,6 +19,19 @@ namespace ThespiVision
             Routing.RegisterRoute(nameof(LogInPage), typeof(LogInPage));
             Routing.RegisterRoute(nameof(PostShowPage), typeof(PostShowPage));
             Routing.RegisterRoute(nameof(SavedShowsPage), typeof(SavedShowsPage));
+
+            SavedShowsTab.IsVisible = LoginController.loggedIn;
+            PostShowTab.IsVisible = LoginController.loggedIn;
+
+            LogInPage.LoginStatusChanged += UpdateFlyout;
+
+        }
+
+        private void UpdateFlyout(object sender, EventArgs args)
+        {
+            SavedShowsTab.IsVisible = LoginController.loggedIn;
+            PostShowTab.IsVisible = LoginController.loggedIn;
+            LoginTab.IsVisible = !LoginController.loggedIn;
         }
     }
 }

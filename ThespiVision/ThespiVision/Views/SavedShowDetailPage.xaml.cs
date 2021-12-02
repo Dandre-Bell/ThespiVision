@@ -17,8 +17,6 @@ namespace ThespiVision.Views
         {
             InitializeComponent();
             showID = ID;
-            Console.WriteLine(showID);
-
         }
     }
 }

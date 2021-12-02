@@ -6,7 +6,7 @@
         <StackLayout>
             <Entry Placeholder="Username"/>
             <Entry IsPassword="True" Placeholder="Password"/>
-            <Button Text="Log in!"/>
+            <Button Text="Log in!" Clicked="SendLoginRequest"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
