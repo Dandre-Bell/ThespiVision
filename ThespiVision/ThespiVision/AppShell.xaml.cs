@@ -22,6 +22,15 @@ namespace ThespiVision
 
             SavedShowsTab.IsVisible = LoginController.loggedIn;
             PostShowTab.IsVisible = LoginController.loggedIn;
+            if (!LoginController.loggedIn)
+            {
+                LogOutButton.Text = "";
+            }
+            else
+            {
+                LogOutButton.Text = "Logout";
+            }
+
 
             LogInPage.LoginStatusChanged += UpdateFlyout;
 
@@ -38,7 +47,14 @@ namespace ThespiVision
             SavedShowsTab.IsVisible = LoginController.loggedIn;
             PostShowTab.IsVisible = LoginController.loggedIn;
             LoginTab.IsVisible = !LoginController.loggedIn;
-            
+            if (!LoginController.loggedIn)
+            {
+                LogOutButton.Text = "";
+            }
+            else
+            {
+                LogOutButton.Text = "Logout";
+            }
         }
     }
 }
