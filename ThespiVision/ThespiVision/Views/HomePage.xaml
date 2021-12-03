@@ -7,8 +7,8 @@
         <StackLayout>
             <maps:Map x:Name="showMap" MapType="Street" IsShowingUser="True" />
             <StackLayout HorizontalOptions="Center">
-                <Label Text="Shows within x miles" FontSize="30"/>
-                <Slider Minimum="0" Maximum="100"/>
+                <Label x:Name="RadiusDisplay" Text="Shows within 20 miles" FontSize="30"/>
+                <Slider x:Name="RadiusSlider" Minimum="0" Maximum="100" ThumbColor="Blue" MinimumTrackColor="Blue" MaximumTrackColor="Gray" Margin="0,0,0,30" ValueChanged="Slider_ValueChanged"/>
             </StackLayout>
         </StackLayout>
         
