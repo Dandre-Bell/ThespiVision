@@ -5,8 +5,12 @@
              x:Class="ThespiVision.Views.HomePage">
     <ContentPage.Content>
         <StackLayout>
-
-            <maps:Map x:Name="showMap" MapType="Street" IsShowingUser="True"/>
+            <maps:Map x:Name="showMap" MapType="Street" IsShowingUser="True" />
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Shows within x miles" FontSize="30"/>
+                <Slider Minimum="0" Maximum="100"/>
+            </StackLayout>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
