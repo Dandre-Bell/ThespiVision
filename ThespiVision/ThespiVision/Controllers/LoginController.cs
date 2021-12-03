@@ -8,5 +8,6 @@ namespace ThespiVision.Controllers
     {
 
         public static bool loggedIn = false;
+
     }
 }

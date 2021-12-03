@@ -24,8 +24,8 @@
     <FlyoutItem x:Name="LoginTab" Title="Log In">
         <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:LogInPage}"/>
     </FlyoutItem>
-    <FlyoutItem x:Name="LogOutButton" Title="Log Out" >
+    <MenuItem x:Name="LogOutButton" Clicked="LogOut" Text="Logout" >
         
-    </FlyoutItem>
+    </MenuItem>
 
 </Shell>

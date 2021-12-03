@@ -27,11 +27,18 @@ namespace ThespiVision
 
         }
 
+        private void LogOut(object sender, EventArgs args)
+        {
+            LoginController.loggedIn = false;
+            UpdateFlyout(this, EventArgs.Empty);
+        }
+
         private void UpdateFlyout(object sender, EventArgs args)
         {
             SavedShowsTab.IsVisible = LoginController.loggedIn;
             PostShowTab.IsVisible = LoginController.loggedIn;
             LoginTab.IsVisible = !LoginController.loggedIn;
+            
         }
     }
 }
