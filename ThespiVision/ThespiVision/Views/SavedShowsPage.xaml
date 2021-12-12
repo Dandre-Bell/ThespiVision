@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ThespiVision.Views.SavedShowsPage">
+             x:Class="ThespiVision.Views.SavedShowsPage"
+             Title="Saved Shows">
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="EmptySaveListText" Text="View your saved shows here!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
@@ -12,15 +13,12 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <StackLayout>
                                     <Label Text="{Binding title}"/>
-                                    <Label Text="{Binding showDate}"/>
                                 </StackLayout>
-                                <ImageButton Source="TrashIcon.png" WidthRequest="50" Margin="210,0,0,0" Scale=".8" BackgroundColor="Transparent"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Add Test" Clicked="testAdd"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

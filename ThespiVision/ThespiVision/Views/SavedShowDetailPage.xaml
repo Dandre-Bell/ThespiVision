@@ -4,10 +4,14 @@
              x:Class="ThespiVision.Views.SavedShowDetailPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
-            <Label x:Name="Title" />
-            <Label Text="Company"/>
-            <Label Text="Date and time"/>
-            <Label Text="Description"/>
+            <Label x:Name="Title" FontSize="40" TextColor="Black"/>
+            <Label x:Name="Company"/>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="OpenDate"/>
+                <Label x:Name="CloseDate"/>
+            </StackLayout>
+            <Label x:Name="Description"/>
+            <ImageButton x:Name="DelBtn" Source="TrashIcon.png" WidthRequest="50" Margin="210,0,0,0" Scale=".8" BackgroundColor="Transparent" Clicked="DeleteEntry" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ThespiVision.Models;
+using ThespiVision.Controllers;
 
 namespace ThespiVision.Views
 {
@@ -15,11 +16,12 @@ namespace ThespiVision.Views
     {
 
 
-        private readonly ObservableCollection<Show> _savedShows = new ObservableCollection<Show> { };
+        private static ObservableCollection<Show> _savedShows = new ObservableCollection<Show> { };
 
         public SavedShowsPage()
         {
             InitializeComponent();
+            _savedShows = ShowApiController.Get().Result;
             EmptySaveListText.IsVisible = !(_savedShows.Count > 0);
             SavedShowListView.IsVisible = _savedShows.Count > 0;
             _savedShows.CollectionChanged += UpdateVisibility;
@@ -27,21 +29,26 @@ namespace ThespiVision.Views
             SavedShowListView.ItemTapped += openDetailPage;
         }
 
-        private async void testAdd(object sender, EventArgs args)
+        override
+         protected void OnAppearing()
         {
-           _savedShows.Add(new Show("Test Show", "Shakespear", "Right here", "It's a test show"));
+            _savedShows = ShowApiController.Get().Result;
+            SavedShowListView.ItemsSource = _savedShows;
+            UpdateVisibility(this, EventArgs.Empty);
+
         }
 
         private async void openDetailPage(object sender, EventArgs args)
         {
             var chosenShow = SavedShowListView.SelectedItem as Show;
-           await Navigation.PushAsync(new SavedShowDetailPage(chosenShow.listingID));
+           await Navigation.PushAsync(new SavedShowDetailPage(chosenShow.title, chosenShow.company, chosenShow.description, chosenShow.openDate, chosenShow.closeDate, chosenShow.showID));
         }
 
-        private void UpdateVisibility(Object sender, EventArgs args)
+        private void UpdateVisibility(object sender, EventArgs args)
         {
             EmptySaveListText.IsVisible = !(_savedShows.Count > 0);
             SavedShowListView.IsVisible = _savedShows.Count > 0;
         }
+
     }
 }

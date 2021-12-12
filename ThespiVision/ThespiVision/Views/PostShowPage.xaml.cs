@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ThespiVision.Controllers;
 
 namespace ThespiVision.Views
 {
@@ -15,6 +16,13 @@ namespace ThespiVision.Views
         public PostShowPage()
         {
             InitializeComponent();
+            
+        }
+
+
+        public async void PostShow(object sender, EventArgs args)
+        {
+          await ShowApiController.Post(title.Text, company.Text, location.Text, desctiption.Text, open.Date, close.Date);
         }
     }
 }

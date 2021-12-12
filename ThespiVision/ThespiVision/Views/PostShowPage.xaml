@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ThespiVision.Views.PostShowPage">
+             x:Class="ThespiVision.Views.PostShowPage"
+             Title="Post Show">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Show Title"/>
-            <Entry Placeholder="Theater Company"/>
-            <Entry Placeholder="Location"/>
+            <Entry x:Name="title" Placeholder="Show Title"/>
+            <Entry x:Name="company" Placeholder="Theater Company"/>
+            <Entry x:Name="location"  Placeholder="Location"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <Label Text="Opening:" FontSize="19" TextColor="Black" Margin="0,9.5,0,0"/>
+                <DatePicker x:Name="open"/>
+                <Label Text="Closing:" FontSize="19" TextColor="Black" Margin="0,9.5,0,0"/>
+                <DatePicker x:Name="close"/>
+            </StackLayout>
             <Frame BorderColor="LightGray" HasShadow="False" Padding="0">
-                <Editor Placeholder="Enter a short description of the show" HeightRequest="100"/>
+                <Editor x:Name="desctiption" Placeholder="Enter a short description of the show" HeightRequest="100"/>
             </Frame>
-            <Button Text="Post Show"/>
+            <Button Text="Post Show" Clicked="PostShow"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThespiVision.Android", "The
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThespiVision.iOS", "ThespiVision\ThespiVision.iOS\ThespiVision.iOS.csproj", "{A52108CC-D218-415D-88AF-52D6D0F17C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThespiVision", "ThespiVision\ThespiVision\ThespiVision.csproj", "{D499D4B8-0DFE-45A7-B970-E9F4D88E56A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThespiVision", "ThespiVision\ThespiVision\ThespiVision.csproj", "{D499D4B8-0DFE-45A7-B970-E9F4D88E56A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
