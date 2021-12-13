@@ -66,9 +66,9 @@ namespace ThespiVision.Views
             
             Console.WriteLine("finding shows");
             //Run server side search code
-            MapSearchController.getShowPosition(new Position(location.Latitude, location.Longitude), (int)RadiusSlider.Value);
-            ///List<ShowsInRange> foundShows = MapSearchController.FindShowsInRange(new Position(location.Latitude, location.Longitude), (int)RadiusSlider.Value);
-            /*
+            List<ShowsInRange> foundShows = await MapSearchController.getShowPosition(new Position(location.Latitude, location.Longitude), (int)RadiusSlider.Value);
+
+            
             Console.WriteLine("Found shows");
             // replace tempArr with new list
             foreach(ShowsInRange foundShow in foundShows)
@@ -81,7 +81,7 @@ namespace ThespiVision.Views
                     Type = PinType.Place
                 });
             }           
-      */
+      
             
         }
 

@@ -22,28 +22,9 @@ namespace ThespiVision.Controllers
 
         //compare show positions to user position and return a list of show objects that are within the conrrect distance
 
-        public static List<ShowsInRange> FindShowsInRange(Position userLocation, int distance)
-        {
-
-            List<ShowsInRange> searchResult = new List<ShowsInRange> { };
 
 
-            for (int i = 0; i < showContainer.Count; i++)
-            {
-
-                Position showPosition = posList[i];
-                if (Distance.BetweenPositions(showPosition, userLocation).Equals(Distance.FromMiles(distance)))
-                {
-                    searchResult.Add(new ShowsInRange(showContainer[i].showID, showContainer[i].title, showPosition, showContainer[i].company));
-                    Console.WriteLine("Result added");
-                }
-
-            }
-
-            return searchResult;
-        }
-
-        public static async void getShowPosition(Position userLocation, int distance)
+        public static async Task<List<ShowsInRange>> getShowPosition(Position userLocation, int distance)
         {
             Console.WriteLine("HIT");
             Console.WriteLine("Filling showContainer");
@@ -54,7 +35,7 @@ namespace ThespiVision.Controllers
             for(int j = 0; j < showContainer.Count; j++)
             {
                 
-                var carrier = await _geocoder.GetPositionsForAddressAsync("Krebs Hall, Johnstown, Pennsylvania");
+                var carrier = await _geocoder.GetPositionsForAddressAsync(showContainer[j].location);
                 posList.Add(new Position(carrier.First().Latitude, carrier.First().Longitude));
                 Console.WriteLine("Position added");
                 Console.WriteLine(posList.Count);
@@ -68,13 +49,16 @@ namespace ThespiVision.Controllers
             {
 
                 Position showPosition = posList[i];
-                if (double.Parse(Distance.BetweenPositions(showPosition, userLocation).ToString()) <= double.Parse((Distance.FromMiles(distance)).ToString()))
+                Console.WriteLine(Distance.BetweenPositions(showPosition, userLocation).Miles.ToString());
+                if (Distance.BetweenPositions(showPosition, userLocation).Miles <= Distance.FromMiles(distance).Miles)
                 {
                     searchResult.Add(new ShowsInRange(showContainer[i].showID, showContainer[i].title, showPosition, showContainer[i].company));
                     Console.WriteLine("Result added");
+                    Console.WriteLine(searchResult.Count);
                 }
 
             }
+            return searchResult;
         }
     }
 }
