@@ -64,13 +64,10 @@ namespace ThespiVision.Views
         {
             var location = await Geolocation.GetLastKnownLocationAsync();
             
-            Console.WriteLine("finding shows");
             //Run server side search code
             List<ShowsInRange> foundShows = await MapSearchController.getShowPosition(new Position(location.Latitude, location.Longitude), (int)RadiusSlider.Value);
 
-            
-            Console.WriteLine("Found shows");
-            // replace tempArr with new list
+
             foreach(ShowsInRange foundShow in foundShows)
             {
                 showMap.Pins.Add(new Pin

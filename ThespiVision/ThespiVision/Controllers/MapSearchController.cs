@@ -26,10 +26,8 @@ namespace ThespiVision.Controllers
 
         public static async Task<List<ShowsInRange>> getShowPosition(Position userLocation, int distance)
         {
-            Console.WriteLine("HIT");
-            Console.WriteLine("Filling showContainer");
+
             showContainer = ShowApiController.Get().Result;
-            Console.WriteLine("showContainer Filled");
             
 
             for(int j = 0; j < showContainer.Count; j++)
@@ -37,9 +35,7 @@ namespace ThespiVision.Controllers
                 
                 var carrier = await _geocoder.GetPositionsForAddressAsync(showContainer[j].location);
                 posList.Add(new Position(carrier.First().Latitude, carrier.First().Longitude));
-                Console.WriteLine("Position added");
-                Console.WriteLine(posList.Count);
-                Console.WriteLine(posList[0].Latitude);
+
             }
 
             List<ShowsInRange> searchResult = new List<ShowsInRange> { };
@@ -53,8 +49,7 @@ namespace ThespiVision.Controllers
                 if (Distance.BetweenPositions(showPosition, userLocation).Miles <= Distance.FromMiles(distance).Miles)
                 {
                     searchResult.Add(new ShowsInRange(showContainer[i].showID, showContainer[i].title, showPosition, showContainer[i].company));
-                    Console.WriteLine("Result added");
-                    Console.WriteLine(searchResult.Count);
+
                 }
 
             }
