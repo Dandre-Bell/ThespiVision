@@ -36,6 +36,7 @@ namespace ThespiVision.Controllers
                 savedShowList = JsonConvert.DeserializeObject<ObservableCollection<Show>>(content);
             }
 
+            Console.WriteLine("serving get response");
             return savedShowList;
         }
 

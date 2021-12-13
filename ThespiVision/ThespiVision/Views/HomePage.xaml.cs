@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using Xamarin.Forms.Maps;
+using ThespiVision.Models;
+using ThespiVision.Controllers;
 
 namespace ThespiVision.Views
 {
@@ -15,6 +17,7 @@ namespace ThespiVision.Views
     public partial class HomePage : ContentPage
     {
 
+        // Create a list of objects contraining the showID,Titles, and generated positions for shows returned from the server
         public HomePage()
         {
             InitializeComponent();
@@ -56,5 +59,31 @@ namespace ThespiVision.Views
                 // Unable to get location
             }
         }
+
+        private async void FindShows(object sender, EventArgs args)
+        {
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            
+            Console.WriteLine("finding shows");
+            //Run server side search code
+            MapSearchController.getShowPosition(new Position(location.Latitude, location.Longitude), (int)RadiusSlider.Value);
+            ///List<ShowsInRange> foundShows = MapSearchController.FindShowsInRange(new Position(location.Latitude, location.Longitude), (int)RadiusSlider.Value);
+            /*
+            Console.WriteLine("Found shows");
+            // replace tempArr with new list
+            foreach(ShowsInRange foundShow in foundShows)
+            {
+                showMap.Pins.Add(new Pin
+                {
+                    Label = foundShow.title,
+                    Address = foundShow.company,
+                    Position = foundShow.showLocation,
+                    Type = PinType.Place
+                });
+            }           
+      */
+            
+        }
+
     }
 }

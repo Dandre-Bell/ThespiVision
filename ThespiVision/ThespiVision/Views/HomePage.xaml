@@ -8,9 +8,9 @@
             <maps:Map x:Name="showMap" MapType="Street" IsShowingUser="True" />
             <StackLayout HorizontalOptions="Center">
                 <Label x:Name="RadiusDisplay" Text="Shows within 20 miles" FontSize="30"/>
-                <Slider x:Name="RadiusSlider" Minimum="0" Maximum="100" ThumbColor="Blue" MinimumTrackColor="Blue" MaximumTrackColor="Gray" Margin="0,0,0,30" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="RadiusSlider" Minimum="0" Maximum="100" ThumbColor="Blue" MinimumTrackColor="Blue" MaximumTrackColor="Gray" Margin="0,0,0,10" ValueChanged="Slider_ValueChanged"/>
             </StackLayout>
+            <Button Text="Find Shows!" BackgroundColor="CornflowerBlue" BorderWidth="5" WidthRequest="300" HeightRequest="60" Margin="0,0,0,40" HorizontalOptions="CenterAndExpand" Clicked="FindShows"/>
         </StackLayout>
-        
     </ContentPage.Content>
 </ContentPage>
