@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>aspnet-ThespiWebApi-5B5E5C4C-8A44-4FB6-AEE7-E14EE8F0AC6C</UserSecretsId>
+    <UserSecretsId>key = API_KEY</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
